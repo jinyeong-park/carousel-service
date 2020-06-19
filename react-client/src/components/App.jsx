@@ -107,10 +107,10 @@ class App extends React.Component {
             ? 'nav-selected'
             : 'nav-unselected'}
             onClick={() => this.changeView('feed')}>
-            See all Posts
+            prev(see all)
           </span>
           <span className="nav-unselected">
-            Write a Post
+            next(Write)
           </span>
           <span className="nav-unselected">
             Admin
