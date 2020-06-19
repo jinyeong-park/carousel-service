@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 const mongoose = require('mongoose');
 const db = require('./index.js');
 
-
 const carouselSchema = new mongoose.Schema(
   {
+    room_id: Number,
     title: String,
     bed: Number,
     type: String,
@@ -15,15 +16,11 @@ const carouselSchema = new mongoose.Schema(
     save_status: {
       user_id: Number,
       name: String,
-      saved: Boolean
- }
-},
-  {
-    timestamps: true
-  }
+      saved: Boolean,
+    },
+  },
 );
 
-//model --document like mysql table
-//.model() function makes a copy of schema
+// .model(): makes a copy of schema -- document/table
 const Carousel = mongoose.model('Carousel', carouselSchema);
 module.exports = Carousel;

@@ -1,6 +1,5 @@
-//Controller
+// Controller
 const Model = require('./Model.js');
-
 
 function getRooms(req, res) {
   console.log('controller in get');
@@ -11,11 +10,9 @@ function getRooms(req, res) {
     } else {
       res.send(results);
     }
-  })
+  });
 }
 
-
-
 module.exports = {
-  getRooms
- }
+  getRooms,
+};
