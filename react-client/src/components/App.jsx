@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
 // import sampleData from '../sample_Data.js';
-import Post from './Post.jsx';
+
 import RoomList from './RoomList.jsx';
 
 /*
@@ -38,13 +38,13 @@ class App extends React.Component {
     this.state = {
       view: 'feed',
       rooms: []
-    }
+    };
     this.changeView = this.changeView.bind(this);
     this.getBlogs = this.getBlogs.bind(this);
   }
 
   componentDidMount() {
-    this.getBlogs()
+    this.getBlogs();
   }
 
   getBlogs() {
@@ -59,9 +59,9 @@ class App extends React.Component {
         });
       },
       error: (err) => {
-        console.log('err in client get', err)
+        console.log('err in client get', err);
       }
-    })
+    });
   }
 
   // addBlogs() {
@@ -87,12 +87,10 @@ class App extends React.Component {
   }
 
   renderView() {
-    const {view} = this.state;
+    const { view } = this.state;
 
     if (view === 'feed') {
       return <RoomList handleClick={() => this.changeView('anypostview')} rooms={this.state.rooms}/>
-    } else {
-      return <Post />
     }
   }
   render() {
@@ -116,7 +114,6 @@ class App extends React.Component {
             Admin
           </span>
         </div>
-
         <div className="main">
           {this.renderView()}
         </div>

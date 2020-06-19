@@ -3,7 +3,7 @@ import moment from 'moment';
 
 
 function RoomItem(props) {
-  console.log('props before return', props)
+  // console.log('props before return', props);
 
   return (
     // console.log('props after return', props)

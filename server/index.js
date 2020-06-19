@@ -11,9 +11,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 
-app.get('/api/rooms/carousel/', function(req, res) {
+app.get('/api/rooms/carousel/', (req, res) => {
   // TODO - your code here!
-  Controller.getRooms(req, res)
+  Controller.getRooms(req, res);
 });
 
 // app.post('/api/blogs', function(req, res) {
