@@ -1,19 +1,15 @@
 const mongoose = require('mongoose');
 const db = require('./index.js');
-mongoose.Promise = global.Promise;
+
 
 const carouselSchema = new mongoose.Schema(
   {
-  room_id: Number,
   title: String,
   bed: Number,
   type: String,
   price: Number,
-  stars: {
-    isStars: Boolean,
-    rating: Number
-  },
-  room_photo: {imageUrl: String, description: String},
+  stars: Number,
+  imageUrl: String,
   isSuperhost: Boolean,
   review_no: Number,
   save_status: {
@@ -30,6 +26,12 @@ const carouselSchema = new mongoose.Schema(
 //model --document like mysql table
 //.model() function makes a copy of schema
 const Carousel = mongoose.model('Carousel', carouselSchema);
-
-
 module.exports = Carousel;
+
+
+
+
+
+
+
+
