@@ -1,12 +1,13 @@
 // Model : communicate with db
-const Blogs = require('../database-mongodb/Carousel.js');
+const Carousel = require('../database-mongodb/Carousel.js');
 
 
 
 function getRooms(callback) {
    //mongo db
    console.log('get in model')
-   Blogs.find(callback).sort({createdAt: -1})
+  //  Blogs.find(callback).sort({createdAt: -1})
+  Carousel.find(callback)
 
 
 

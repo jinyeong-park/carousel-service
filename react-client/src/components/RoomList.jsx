@@ -1,16 +1,16 @@
 import React from 'react';
 import moment from 'moment';
-import FeedItem from './FeedItem.jsx';
+import RoomItem from './RoomItem.jsx';
 
 
-const Feed = (props) => (
+const RoomList = (props) => (
 
   <div className="feed">
     <ul>
       <li className="feed-list-item">
         {
-          props.blogs.map((blog) => (
-            <FeedItem blog={blog} handleClick={props.handleClick}/>
+          props.rooms.map((room) => (
+            <RoomItem room={room} handleClick={props.handleClick}/>
           )
           )
         }
@@ -19,7 +19,7 @@ const Feed = (props) => (
   </div>
 );
 
-export default Feed;
+export default RoomList;
 
 
   {/* <div className="feed-list-item-title" onClick={props.handleClick}>{props.blogs[0].title}</div>

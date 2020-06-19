@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/blogmodo';
+//carousel: name of the database
+const mongoUri = 'mongodb://localhost/carousel';
 
 const db = mongoose.connect(mongoUri);
 

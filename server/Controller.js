@@ -2,9 +2,9 @@
 const Model = require('./Model.js');
 
 
-function getBlogs(req, res) {
+function getRooms(req, res) {
   console.log('controller in get');
-  Model.getBlogs( (err, results) => {
+  Model.getRooms( (err, results) => {
     if (err) {
       console.log('error:', err);
       res.status(400).send(err)
@@ -17,5 +17,5 @@ function getBlogs(req, res) {
 
 
 module.exports = {
-  getBlogs
+  getRooms
  }

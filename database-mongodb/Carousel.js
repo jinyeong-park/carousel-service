@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 const carouselSchema = new mongoose.Schema(
   {
   room_id: Number,
-  name: String,
+  title: String,
   bed: Number,
   type: String,
   price: Number,

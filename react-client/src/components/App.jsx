@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
-import sampleData from '../sample_Data.js';
+// import sampleData from '../sample_Data.js';
 import Post from './Post.jsx';
-import Feed from './Feed.jsx';
+import RoomList from './RoomList.jsx';
 
 /*
   READ THESE COMMENTS AS A PART OF STEP TWO
@@ -37,9 +37,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       view: 'feed',
-      blogs: []
+      rooms: []
     }
-
     this.changeView = this.changeView.bind(this);
     this.getBlogs = this.getBlogs.bind(this);
   }
@@ -52,11 +51,11 @@ class App extends React.Component {
     // console.log('getting')
     $.ajax({
       method: "GET",
-      url: "/api/blogs",
+      url: "/api/rooms/carousel/",
       success: (data) => {
-        // console.log("getblogs's coming data type and data is", typeof data, data);
+        console.log("coming data type and data is", typeof data, data);
         this.setState({
-          blogs: data
+          rooms: data
         });
       },
       error: (err) => {
@@ -91,7 +90,7 @@ class App extends React.Component {
     const {view} = this.state;
 
     if (view === 'feed') {
-      return <Feed handleClick={() => this.changeView('anypostview')} blogs={this.state.blogs}/>
+      return <RoomList handleClick={() => this.changeView('anypostview')} rooms={this.state.rooms}/>
     } else {
       return <Post />
     }
@@ -102,7 +101,7 @@ class App extends React.Component {
         <div className="nav">
           <span className="logo"
             onClick={() => this.changeView('feed')}>
-            BLOGMODO
+            More places to stay
           </span>
           <span className={this.state.view === 'feed'
             ? 'nav-selected'

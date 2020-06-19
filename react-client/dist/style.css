@@ -5,7 +5,7 @@ body {
   margin: 0px;
   color: #2C3E50;
   background-color: #ECF0F1;
-  font-size: 1.1em;
+  font-size: 1.9em;
 }
 
 h2 {
@@ -32,7 +32,25 @@ h2 {
 }
 
 .feed-list-item-title {
-  font-size: 1.8em;   
+  font-size: 0.7em;
+  font-family: 'Francois One';
+  margin-bottom: 10px;
+}
+
+.feed-list-item-type {
+  font-size: 0.5em;
+  font-family: 'Francois One';
+  margin-bottom: 10px;
+}
+
+.feed-list-item-bed {
+  font-size: 0.5em;
+  font-family: 'Francois One';
+  margin-bottom: 10px;
+}
+
+.feed-list-item-price {
+  font-size: 0.5em;
   font-family: 'Francois One';
   margin-bottom: 10px;
 }
@@ -48,9 +66,7 @@ h2 {
   color: #777777;
 }
 
-.feed-list-item-byline-author {
-  font-weight: bolder;
-}
+
 
 button {
   cursor: pointer;
@@ -203,11 +219,11 @@ button {
 
 .logo {
   font-weight: bold;
-  font-size: 1.9em;
+  font-size: 1em;
   margin-right: auto;
   margin-left: 10px;
   font-family: 'Francois One';
-  color: #ffffff;
+  color: black;
 }
 
 .main {
@@ -216,7 +232,7 @@ button {
 }
 
 .nav {
-  background-color: #3498DB;
+  background-color: lightgrey;
   margin: 0px;
   padding: 10px;
   display: flex;
