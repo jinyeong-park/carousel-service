@@ -8,7 +8,7 @@ function getRooms(req, res) {
       console.log('error:', err);
       res.status(400).send(err);
     } else {
-      res.send(results);
+      res.status(200).send(results);
     }
   });
 }

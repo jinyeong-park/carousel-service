@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 // database name: carousel
-const mongoUri = 'mongodb://localhost/carousel';
-const db = mongoose.connect(mongoUri);
+const db = mongoose.connect('mongodb://localhost/carousel');
 
 module.exports = db;
