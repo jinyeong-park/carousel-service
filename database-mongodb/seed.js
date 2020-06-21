@@ -95,6 +95,7 @@ const getCarousels = (num) => {
       isSuperhost: faker.random.boolean(),
       review_no: getRandomReviewNo(),
       bookmark: [{
+        user_id: getRandomUserId(),
         isBookmark: faker.random.boolean(),
         category: faker.address.city(),
       }],
