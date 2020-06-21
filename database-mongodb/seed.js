@@ -1,6 +1,7 @@
 const faker = require('faker');
+const Promise = require('bluebird');
 
-const db = require('./index.js');
+// const db = require('./index.js');
 const Carousel = require('./Carousel.js');
 
 // amazon s3 images
@@ -60,7 +61,7 @@ function getRandomStars() {
   return randomStars;
 }
 
-// const isSuperhost =
+// isSuperhost
 // faker.random.boolean();
 
 function getRandomReviewNo() {
@@ -77,7 +78,7 @@ function getRandomUserId() {
   return randomUserId;
 }
 
-// const randomCity =
+// randomCity
 // faker.address.city()
 
 const getCarousels = (num) => {
@@ -93,11 +94,11 @@ const getCarousels = (num) => {
       imageUrl: getRandomPhotoUrl(),
       isSuperhost: faker.random.boolean(),
       review_no: getRandomReviewNo(),
-      save_status: {
+      bookmark: [{
         user_id: getRandomUserId(),
-        name: faker.address.city(),
-        saved: faker.random.boolean(),
-      },
+        isBookmark: faker.random.boolean(),
+        category: faker.address.city(),
+      }],
     };
     sampleCarouselSet.push(sampleCarousel);
   }
@@ -129,22 +130,26 @@ const carousels = getCarousels(100);
 //   },
 // ]
 
+// const insertSampleCarousel = function () {
+//   console.log('trying to make create');
+//   Carousel.create(carousels, (err, result) => {
+//     if (err) {
+//       console.log(err);
+//     }
+//   })
+//     .then(() => db.disconnect());
+// };
 const insertSampleCarousel = function () {
   console.log('trying to make create');
-  Carousel.create(carousels, (err, result) => {
-    if (err) {
-      console.log(err);
-    }
-  })
-    .then(() => db.disconnect());
+  Promise.resolve(Carousel.create(carousels))
+    .then(() => db.disconnect())
+    .catch((error) => console.log('this is catch error:', error));
 };
-console.log('after create');
 
 insertSampleCarousel();
 
-// should call node seed.js in the seed directory
-// run seed.js (node seed.js)
-
+// should run node seed.js in the seed directory
+// node seed.js
 // connect mongo db and check my carousel collection is there
 
 // module.exports = {

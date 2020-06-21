@@ -12,14 +12,14 @@ class App extends React.Component {
       rooms: [],
     };
     // this.changeView = this.changeView.bind(this);
-    this.getBlogs = this.getBlogs.bind(this);
+    this.getRoomList = this.getRoomList.bind(this);
   }
 
   componentDidMount() {
-    this.getBlogs();
+    this.getRoomList();
   }
 
-  getBlogs() {
+  getRoomList() {
     // console.log('getting')
     $.ajax({
       method: 'GET',
@@ -36,7 +36,6 @@ class App extends React.Component {
     });
   }
 
-
   render() {
     return (
       <div>
@@ -44,9 +43,9 @@ class App extends React.Component {
           <span className="logo">
             More places to stay
           </span>
-          <span className="nav-unselected">
+          {/* <span className="nav-unselected">
             prev-next
-          </span>
+          </span> */}
         </div>
         <RoomList handleClick={() => this.changeView('anypostview')} rooms={this.state.rooms}/>
       </div>

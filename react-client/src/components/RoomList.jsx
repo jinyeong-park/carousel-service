@@ -3,9 +3,9 @@ import RoomItem from './RoomItem.jsx';
 
 const RoomList = (props) => (
 
-  <div className="feed">
+  <div className="rooms">
     <ul>
-      <li className="feed-list-item">
+      <li className="room-list-item">
         {
           props.rooms.map((room) => (
             <RoomItem room={room} handleClick={props.handleClick} />

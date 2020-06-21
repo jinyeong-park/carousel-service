@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Francois+One|PT+Serif:400,400i,700,700i');
+
 
 body {
   font-family: 'PT Serif', sans-serif;
@@ -12,7 +12,7 @@ h2 {
   color: #2C3E50;
 }
 
-.feed-list-item {
+.room-list-item {
   min-height: 350px;
   margin: 40px;
   list-style: none;
@@ -22,3 +22,4 @@ h2 {
   padding: 30px 50px 0px 50px;
   box-shadow: 0 0 1em #80808066;
 }
+
