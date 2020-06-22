@@ -20,20 +20,6 @@ const carouselSchema = new mongoose.Schema(
   },
 );
 
-// const userSchema = new mongoose.Schema(
-//   {
-//     user_id: Number,
-//     user_name: String,
-//     bookmark: [{
-//       category: String,
-//       rooms: [{
-//         room_id: Number,
-//         imageUrl: String,
-//       }],
-//       saved_no: Number,
-//     }],
-//   },
-// );
 
 // .model(): makes a copy of schema -- document/table
 const Carousel = mongoose.model('Carousel', carouselSchema);
