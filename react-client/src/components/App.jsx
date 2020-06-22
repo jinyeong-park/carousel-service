@@ -43,9 +43,6 @@ class App extends React.Component {
           <span className="logo">
             More places to stay
           </span>
-          {/* <span className="nav-unselected">
-            prev-next
-          </span> */}
         </div>
         <RoomList handleClick={() => this.changeView('anypostview')} rooms={this.state.rooms}/>
       </div>

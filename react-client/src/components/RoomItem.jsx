@@ -7,7 +7,6 @@ class RoomItem extends React.Component {
       isHovering: false,
     };
     this.handleMouseHover = this.handleMouseHover.bind(this);
-    // this.toggleHoverState = this.toggleHoverState.bind(this);
   }
 
   handleMouseHover() {
