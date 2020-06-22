@@ -1,26 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-
-// import sampleData from '../sample_Data.js';
 import RoomList from './RoomList.jsx';
+import styled from 'styled-components';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       rooms: [],
+      bookmark: [{
+        isBookmark: false,
+        user_id: '',
+        category: '',
+      }],
+
     };
-    // this.changeView = this.changeView.bind(this);
-    this.getBlogs = this.getBlogs.bind(this);
+    this.getRoomList = this.getRoomList.bind(this);
   }
 
   componentDidMount() {
-    this.getBlogs();
+    this.getRoomList();
   }
 
-  getBlogs() {
-    // console.log('getting')
+  getRoomList() {
     $.ajax({
       method: 'GET',
       url: '/api/rooms/carousel/',
@@ -36,7 +39,6 @@ class App extends React.Component {
     });
   }
 
-
   render() {
     return (
       <div>
@@ -44,11 +46,8 @@ class App extends React.Component {
           <span className="logo">
             More places to stay
           </span>
-          <span className="nav-unselected">
-            prev-next
-          </span>
         </div>
-        <RoomList handleClick={() => this.changeView('anypostview')} rooms={this.state.rooms}/>
+        <RoomList rooms={this.state.rooms}/>
       </div>
     );
   }
