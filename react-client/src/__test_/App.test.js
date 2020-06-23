@@ -5,7 +5,7 @@ import App from '../components/App';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('App test suite', () => {
+describe('App test', () => {
     test('should render the App component', () => {
         const wrapper = shallow(<App />);
         expect(wrapper.exists()).toBe(true);
