@@ -8,42 +8,33 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rooms: [],
-      bookmark: [{
-        isBookmark: false,
-        user_id: '',
-        category: '',
-      }],
+      rooms: [
+        {
+          room_id:7,
+          title:"tempora aut nemo",
+          bed:2,
+          type:"Entire house",
+          price:122,
+          stars:4,
+          imageUrl:"https://carousels.s3.us-east-2.amazonaws.com/6f4df6fd-0be0-400c-a5a4-4fea34c78504.jpg",
+          isSuperhost:true,
+          review_no:519,
+          bookmark:[{
+            user_id: 1,
+            isBookmark:false,
+            category:"Port Jayson",
+          }]
+        }
+      ]
+    }
 
-    };
-    this.getRoomList = this.getRoomList.bind(this);
-  }
-
-  componentDidMount() {
-    this.getRoomList();
-  }
-
-  getRoomList() {
-    $.ajax({
-      method: 'GET',
-      url: '/api/rooms/carousel/',
-      success: (data) => {
-        console.log('coming data type and data is', typeof data, data);
-        this.setState({
-          rooms: data,
-        });
-      },
-      error: (err) => {
-        console.log('err in client get', err);
-      },
-    });
   }
 
   render() {
     return (
       <div>
-        <div className="nav">
-          <span className="logo">
+        <div className="container">
+          <span>
             More places to stay
           </span>
         </div>

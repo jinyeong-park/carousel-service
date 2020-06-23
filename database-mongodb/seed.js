@@ -1,6 +1,10 @@
 const faker = require('faker');
 const Promise = require('bluebird');
 const Carousel = require('./Carousel.js');
+// const faker = require('faker');
+// const mongoose = require('mongoose');
+// const db = require('./index.js');
+
 
 // amazon s3 images
 const images = [
@@ -97,11 +101,20 @@ const getCarousels = (num) => {
 const carousels = getCarousels(100);
 
 
-const insertSampleCarousel = function () {
-  console.log('trying to make create');
-  Promise.resolve(Carousel.create(carousels))
-    .then(() => db.disconnect())
-    .catch((error) => console.log('this is catch error:', error));
+// const insertSampleCarousel = function () {
+//   console.log('trying to make create');
+//   Promise.resolve(Carousel.create(carousels))
+//     .then(() => db.disconnect())
+//     .catch((error) => console.log('this is catch error:', error));
+// };
+
+const insertSampleCarousel = function() {
+  Carousel.create(carousels)
+    .then(() => db.disconnect());
 };
 
 insertSampleCarousel();
+
+module.exports = {
+  insertSampleCarousel
+ }

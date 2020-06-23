@@ -1,6 +1,5 @@
-const mongoose = require('./index.js');
+const mongoose = require('mongoose');
 
-// assume one user is using it.
 const carouselSchema = new mongoose.Schema(
   {
     room_id: Number,
